@@ -25,4 +25,4 @@ def getip(request):
     ip = HttpRequest.get_host(request)
     return render(request, 'welcome/getip.html', {
         'ip': ip
-    }
+    })
