@@ -24,6 +24,8 @@ def health(request):
 
 def getip(request):
     ip = request.META['REMOTE_ADDR']
+    meta = request.META.keys()
     return render(request, 'welcome/getip.html', {
-        'ip': ip
+        'ip': ip,
+        'meta': meta
     })
