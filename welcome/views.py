@@ -23,7 +23,7 @@ def health(request):
     return HttpResponse(PageView.objects.count())
 
 def getip(request):
-    ip = HttpRequest.get_host(request)
+    ip = request.META['REMOTE_ADDR']
     return render(request, 'welcome/getip.html', {
         'ip': ip
     })
