@@ -23,11 +23,7 @@ def health(request):
     return HttpResponse(PageView.objects.count())
 
 def getip(request):
-    ip = request.META['REMOTE_ADDR']
-    ip2 = request.META['HTTP_X_FORWARDED_FOR']
-    meta = request.META.keys()
+    ip = request.META['HTTP_X_FORWARDED_FOR']
     return render(request, 'welcome/getip.html', {
-        'ip': ip,
-        'ip2': ip2,
-        'meta': meta
+        'ip': ip
     })
