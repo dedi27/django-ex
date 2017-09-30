@@ -24,7 +24,7 @@ def health(request):
 
 def getip(request):
     ip = request.META['REMOTE_ADDR']
-    ip2 = request.META['HTTP_X_FORWARDED_HOST']
+    ip2 = request.META['HTTP_X_FORWARDED_FOR']
     meta = request.META.keys()
     return render(request, 'welcome/getip.html', {
         'ip': ip,
